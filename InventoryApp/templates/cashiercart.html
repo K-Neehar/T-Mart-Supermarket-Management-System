@@ -93,7 +93,6 @@
     </style>
 </head>
 <body>
-
     <div class="top-bar">
         <div class="brand">T-Mart</div>
         <div class="lo"><a href="{% url 'ln' %}"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
@@ -158,7 +157,7 @@
       const element = document.getElementById('pdf-content');
       const opt = {
           margin:       10,
-          filename:     'bill.pdf',
+          filename:     'T-Mart Bill.pdf',
           image:        { type: 'jpeg', quality: 1 },
           html2canvas:  { scale: 2 },
           jsPDF:        { unit: 'mm', format: 'a5', orientation: 'portrait' }
@@ -166,7 +165,7 @@
   
       html2pdf().from(element).set(opt).save();
       alert("Click OK to Download Bill");
-  
+      window.location.href = "{% url 'but' %}";
   }
       </script>
 </body>

@@ -173,7 +173,6 @@ def cart(request):
     price=0
     l1=[]
     for item, frequency in item_frequencies.items():
-        # print(f"{item}: {frequency}")
         a=Products.objects.get(id=item)
         a.quantity=frequency
         price+=a.price*frequency
